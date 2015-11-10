@@ -1,5 +1,5 @@
-# float.s
-# floating-point multiplication
+# floatopt.s
+# optimized floating-point multiplication
 
 # Student Name: Denia L. Del Cid	
 # Date: November 8, 2015
