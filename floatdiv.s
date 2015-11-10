@@ -1,5 +1,5 @@
 # floatdiv.s
-# floating-point multiplication
+# floating-point division
 
 # Student Name: Denia L. Del Cid	
 # Date: November 9, 2015
@@ -15,7 +15,7 @@
 
 fdiv:	and $v0,$v0,$zero			# v0 = 0, the default result
 	beq $a0,$zero,return 			# return if dividend is zero
-	beq $a1,$zero,inf			# return infinity if divisor is zero
+	beq $a1,$zero,return			# return if divisor is zero
 	
 	# place mask for leftmost bit in t5
 	li $t5,0x80000000			# t5 = 0x80000000
@@ -64,5 +64,5 @@ norm:	#sll $t4,$t4,1				# shift to remove implicit 1
 	move $v0,$t2				# place sign in v0
 	or $v0,$v0,$t3				# place exponent in v0
 	or $v0,$v0,$t4				# place significand in v0
-inf:
+
 return:	jr $ra					# return
